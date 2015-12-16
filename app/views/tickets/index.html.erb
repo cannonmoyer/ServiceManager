@@ -1,0 +1,21 @@
+<h1>Ticket Index</h1>
+
+<table>
+	<tr>
+		<th>Name</th>  
+		<th>Phone</th>
+		<th>Email</th>  
+		<th>Shipping Address</th>
+		<th>Description</th>  
+	</tr>	
+	<% @tickets.each do |t| %>
+		<tr>
+			<td><%= t.customer.name %></td>
+			<td><%= t.customer.phone %></td>
+			<td><%= t.customer.email %></td>
+			<td><%= t.customer.shipping_address %></td>
+			<td><%= t.description %></td>
+			<td>[<%= link_to "edit", edit_ticket_path(t) %>] | [<%= link_to "delete", ticket_path(t), method: :delete %>]</td>
+		</tr>
+	<% end %>
+</table>

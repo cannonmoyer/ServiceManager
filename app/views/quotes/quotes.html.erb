@@ -1,0 +1,21 @@
+<h1>Customer Quotes</h1>
+
+<table>
+	<tr>
+		<th>Name</th>  
+		<th>Phone</th>
+		<th>Email</th>  
+		<th>Shipping Address</th>
+		<th>Purpose</th>  
+	</tr>	
+	<% @quotes.each do |q| %>
+		<tr>
+			<td><%= q.customer.name %></td>
+			<td><%= q.customer.phone %></td>
+			<td><%= q.customer.email %></td>
+			<td><%= q.customer.shipping_address %></td>
+			<td><%= q.purpose %></td>
+			<td>[<%= link_to "edit", edit_quote_path(q) %>] | [<%= link_to "delete", quote_path(q), method: :delete %>]</td>
+		</tr>
+	<% end %>
+</table>

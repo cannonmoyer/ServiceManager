@@ -1,0 +1,13 @@
+<h1>Edit Ticket</h1>
+
+<%= form_for(@ticket) do |t| %>
+
+	<p>
+		<%= t.label :description %>
+		<%= t.text_area :description %>
+	</p>
+
+	<p>
+		<%= t.submit %>
+	</p>
+<% end %> 

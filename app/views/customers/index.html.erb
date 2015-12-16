@@ -1,0 +1,26 @@
+<h1>Customer Index</h1>
+
+<table>
+	<tr>
+		<th>Name</th> <th>Company</th> <th>Phone</th> <th>Email</th> <th>Billing Address</th> <th>Shipping Address</th> <th>Taxable</th> <th>Tax Location</th> 
+	</tr>	
+	<% @customers.each do |c| %>
+		<tr>
+			<td><%= c.name %></td>
+			<td><%= c.company %></td>
+			<td><%= c.phone %></td>
+			<td><%= c.email %></td>
+			<td><%= c.billing_address %></td>
+			<td><%= c.shipping_address %></td>
+			<td><%= c.taxable %></td>
+			<td><%= c.tax_location %></td>
+			<td>[<%= link_to "edit", edit_customer_path(c) %>] | [<%= link_to "delete", customer_path(c), method: :delete %>] | [<%= link_to "add to tickets", create_ticket_path(c) %> | [<%= link_to "Create Quote", create_quote_path(c) %>
+				|[<%= link_to "Show Quotes", customer_quote_path(c) %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<p>
+	<%= link_to "Create Customer", new_customer_path %>
+</p>

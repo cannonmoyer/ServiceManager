@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ServiceManager</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<p>
+<% if user_signed_in? %>
+	<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<% else %>
+	<%= link_to 'Sign In', new_user_session_path %>
+<% end %>
+</p>
+
+
+
+
+<%= yield %>
+
+<hr>
+
+<% if flash[:notice] %>
+	<p class="notice"><%= notice %></p>
+<% end %>
+
+<% if flash[:alert] %>
+	<p class="alert"><%= alert %></p>
+<% end %>
+</body>
+</html>

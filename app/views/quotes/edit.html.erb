@@ -1,0 +1,18 @@
+<h1>Edit Quote</h1>
+
+<%= form_for(@quote) do |q| %>
+
+	<p>
+	<%= q.label :service_tech %>
+	<%= q.text_field :service_tech %>
+	</p>
+	
+	<p>
+	<%= q.label :purpose %>
+	<%= q.text_field :purpose %>
+	</p>
+	
+	<p>
+	<%= q.submit %>
+	</p>
+<% end %> 
