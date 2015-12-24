@@ -1,0 +1,2 @@
+module ApproveQuotesHelper
+end

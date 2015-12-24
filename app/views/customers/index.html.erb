@@ -14,7 +14,7 @@
 			<td><%= c.shipping_address %></td>
 			<td><%= c.taxable %></td>
 			<td><%= c.tax_location %></td>
-			<td>[<%= link_to "edit", edit_customer_path(c) %>] | [<%= link_to "delete", customer_path(c), method: :delete %>] | [<%= link_to "add to tickets", create_ticket_path(c) %> | [<%= link_to "Create Quote", create_quote_path(c) %>
+			<td>[<%= link_to "edit", edit_customer_path(c) %>] | [<%= link_to "delete", customer_path(c), method: :delete %>] | [<%= link_to "add to tickets", create_ticket_path(c), method: :post%> | [<%= link_to "Create Quote", create_quote_path(c), method: :post %>
 				|[<%= link_to "Show Quotes", customer_quote_path(c) %>
 			</td>
 		</tr>

@@ -15,4 +15,39 @@
 	<p>
 	<%= q.submit %>
 	</p>
+<% end %>
+
+
+<p>Products</p>
+
+<section id="products-section">
+<table id="products">
+	<tr>
+		<th>Product/Part</th>  
+		<th>Unit/Mdl</th>
+		<th>Description</th>  
+		<th>Qty</th>
+		<th>Price</th>
+		<th>Total</th>  
+	</tr>	
+	<tbody>
+		<%= render @products %>
+	</tbody>
+</table>
+
+<%= form_for (@product), :remote => true do |p| %>
+
+	<p>
+	<%= p.label :product_part %>
+	<%= p.text_field :product_part%>
+	</p>
+	
+	<p>
+	<%= p.submit %>
+	</p>
 <% end %> 
+
+
+</section>
+<%= link_to "Add New Product", new_product_path %>
+<%= link_to "Email Quote To Customer", email_quote_path(@quote) %>

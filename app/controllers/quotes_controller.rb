@@ -17,6 +17,9 @@ class QuotesController < ApplicationController
 
 	def edit
 		@quote = Quote.find(params[:id])
+		session[:edit_quote] = @quote.id
+		@products = @quote.products.all
+		@product = Product.new
 	end
 
 	def update
@@ -30,5 +33,12 @@ class QuotesController < ApplicationController
 		@customer = @quote.customer
 		@quote.destroy
 		redirect_to customer_quote_path(@customer)
+	end
+
+
+	def email
+		@quote = Quote.find(params[:id])
+		@customer = @quote.customer
+		CustomerMailer.email_quote(@customer, @quote).deliver_now
 	end
 end

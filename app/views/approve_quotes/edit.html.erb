@@ -1,0 +1,27 @@
+<h1>Approve Quote</h1>
+
+<dl>
+  <dt>Service Tech:</dt>
+  <dd><%= @quote.service_tech %></dd>
+  <dt>Purpose:</dt>
+  <dd><%= @quote.purpose %></dd>
+</dl>
+
+
+<p>Products</p>
+
+<section id="products-section">
+<table id="products">
+	<tr>
+		<th>Product/Part</th>  
+		<th>Unit/Mdl</th>
+		<th>Description</th>  
+		<th>Qty</th>
+		<th>Price</th>
+		<th>Total</th>  
+	</tr>	
+	<tbody>
+		<%= render @products %>
+	</tbody>
+</table>
+</section>

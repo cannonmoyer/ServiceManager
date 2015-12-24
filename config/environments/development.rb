@@ -40,4 +40,19 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  #Action Mailer
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'secure.emailsrvr.com',
+    port:                 465,
+    domain:               'treadmilldoctor.com',
+    user_name:            'cannon.moyer@treadmilldoctor.com',
+    password:             'N8Ao6G9',
+    authentication:       'plain',
+    #enable_starttls_auto: true 
+    ssl: true }
 end

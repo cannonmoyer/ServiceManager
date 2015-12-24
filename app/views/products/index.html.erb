@@ -1,0 +1,22 @@
+<h1>All Products</h1>
+<table>
+	<tr>
+		<th>Product/Part</th>  
+		<th>Unit/Mdl</th>
+		<th>Description</th>  
+		<th>Qty</th>
+		<th>Price</th>
+		<th>Total</th>  
+	</tr>	
+	<% @products.each do |p| %>
+		<tr>
+			<td><%= p.product_part %></td>
+			<td><%= p.unit_mdl %></td>
+			<td><%= p.description %></td>
+			<td><%= p.quantity %></td>
+			<td><%= p.price %></td>
+			<td><%= p.total %></td>
+			
+		</tr>
+	<% end %>
+</table>

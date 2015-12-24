@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
 
 	def create
 		@customer = Customer.find(params[:id])
-		@ticket = @customer.tickets.create!(description: 'description sample')
+		@ticket = @customer.tickets.create!()
 		#@request = Request.create!(description: 'sample descripton')
 		#@customer.requests = @request
 		#@ticket.save!

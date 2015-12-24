@@ -21,23 +21,23 @@ Rails.application.routes.draw do
 
   resources :tickets
   
-  get 'tickets/:id/create', to: 'tickets#create', as: 'create_ticket'
+  post 'tickets/:id/create', to: 'tickets#create', as: 'create_ticket'
   #delete 'tickets/:id', to: 'tickets#destroy', as: 'destroy_ticket'
   resources :quotes
   #quotes
-  get 'quotes/:id/create', to: 'quotes#create', as: 'create_quote'
+  post 'quotes/:id/create', to: 'quotes#create', as: 'create_quote'
   #get 'quotes', to: 'quotes#index', as: 'quotes'
    
   get 'quotes/:id/quotes', to: 'quotes#quotes', as: 'customer_quote'
 
+  get 'quotes/:id/email', to: 'quotes#email', as: 'email_quote'
   #get 'quotes/:id/edit', to: 'quotes#edit', as: 'edit_quote'
 
+  resources :products
+  #get 'products/new', to: 'products#new', as: 'new_product'
+  #post 'products', to: 'products#create'
 
-
-
-
-
-
+  get 'approve_quotes/:id/edit', to: 'approve_quotes#edit', as: 'approve_quote'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
